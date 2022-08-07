@@ -1,18 +1,41 @@
-# Getting Started with Create React App
+# Some examples abount React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-## Available Scripts
+This repo contain the application of `TODO`
 
-In the project directory, you can run:
+## `1. Some knowledge about TODO Application`
+1. Split up the components and implement the static component, **Attention:** the useage of className and style
+2. Initial the list dynamicly, how to decide which component contain the **Data** we used? <br>
+   -- Some particular component: put data in **itself's state**. <br>
+   -- A lot of component all use this data: put this data in **father component** (state promotion).<br>
 
+3. Communication between father and son component:<br>
+
+   -- Father-Son: just use props direcly. <br>
+   -- Son-Father: The father need to send the son a **function** by props previously.<br>
+
+4. **Attention:** the difference between **defaultChecked** and **Checked**, same relationship between **defaultValue** and **value**
+5. Where the **state** is, where the **operation** is.
+
+
+
+## `How to run this Repo`
+
+### `git clone`
+
+Run `git clone git@github.com:Answer3664/practice-react.git` to clone this repo to your local environment.
+
+### `npm install`
+
+Run `npm install` in the terminal to install the dependency this project needed.
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You may also see any lint errors in the console.1
 
 ### `npm test`
 
