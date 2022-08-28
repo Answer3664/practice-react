@@ -1,17 +1,22 @@
-## State Hook
-1. The state hook can be used in function component, it seems like the `state = {key: value}` in class component <br>
-2. Usage: `const [xxx, setxxx] = React.useState(initState)`, `xxx` is the state you defined before, `setxxx` is the function, you can use it to do what you want to state.
-3. There are two actions you can take in `setxxx`. Firstly, you can `setCount(count+1)`. Secondly, you can `setCount(count => count+1)`
+## How to send param from the link to Route and then the component can use it
 
-## Effect Hook
+1. we can use `params` <br>
+    `<Link to={/home/message/detail/id/title}>{mes.title}</Link>` <br>
+    `<Route path="/home/message/detail/:id/:title" component={Detail}></Route>`<br>
+    `const {id, title} = this.props.match.params`  // receive the params send by Route <br>
 
-1. Effect Hook can be seen as a life cycle hook
-2. Usage: `React.useEffect(function, [stateValue])`, you can do what you want in `function`
-3. If you want to simulate `componentWillUnmont()`, you need to return a function in `function` you pass.
-   
-## Ref Hook
-Ref Hook can be used in function component, it seems like the `React.createRef()` in class component
-`const myRef = React.useRef()`
+2. We can use `search` <br>
+    `<Link to={/home/message/detail/?id=id&title=title}>{mes.title}</Link>  ` <br>
+    `<Route path="/home/message/detail" component={Detail}></Route>`<br>
+    `const {search} = this.props.location`  // using search to receive the params send by Route <br>
+    `import qs from 'qs'`  // import the package <br>
+    `const {id, title} = qs.parse(search.slice(1))` <br>
+
+3. We can use `state` <br>
+    `<Link to={{pathname: '/home/message/detail', state: {id: id, title: title}}}>{title}</Link>` <br>
+    `<Route path="/home/message/detail" component={Detail}></Route>`<br>
+    `const {id, title} = this.props.location.state || {}` <br>
+    when refresh the page, the content still exist.
     
 
 

@@ -34,7 +34,10 @@ export default class Message extends Component {
                 <Switch>
                     {/* <Route path="/home/message/detail/:id/:title" component={Detail}></Route> */}
                     {/* <Route path="/home/message/detail" component={Detail}></Route> */}
-                    <Route path="/home/message/detail" component={Detail}></Route>
+                    {/* <Route path="/home/message/detail" component={Detail}></Route> */}
+                    <Route path={"/home/message/detail"}>
+                        <Detail />
+                    </Route>
                 </Switch>
             </div>
         )
